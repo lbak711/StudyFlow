@@ -1,0 +1,7 @@
+# StudyFlow is a plain static site (HTML + browser JS, no framework or package manager).
+# The app files live inside studyflow_netlify_supabase.zip, so the build step extracts
+# them into dist/ and Netlify publishes that folder. Setup notes, the SQL script and the
+# archive's own netlify.toml are left out of the published site.
+[build]
+  command = "rm -rf dist && unzip -o -q studyflow_netlify_supabase.zip -d dist -x netlify.toml README_IPHONE.txt supabase-setup.sql"
+  publish = "dist"
